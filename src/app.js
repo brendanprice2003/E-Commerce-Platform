@@ -1,45 +1,42 @@
 
 // npm
-// import path from 'path';
-// import { fileURLToPath } from 'url';
-// import { dirname } from 'path';
-// import express from 'express';
-// import sqlite3 from 'sqlite3';
 const path = require('path');
 const express = require('express');
-// const sqlite3 = require('sqlite3');
+const sqlite3 = require('sqlite3');
 
 // config
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
+const log = console.log.bind(console); // shorthand function for `console.log();`
 const app = express();
 
 // configure middleware
 app.use('/public', express.static(__dirname + '/public'));
 
 
-// express paths
-app.get('/', (req, res) => {
+// paths
+app.get('/home', (req, res) => {
     res.sendFile(path.resolve(__dirname, './pages/home.html'));
 });
 
 
-// * wildcard
+// wildcards
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './pages/home.html'));
 });
+// app.get('/', (req, res) => {
+//     res.redirect('/home');
+// });
 
-// listen on port 4300
-app.listen(8080);
+// listen on port 8880
+app.listen(8880);
 console.log('Running...');
-// origin is http://localhost:4300
+// origin is http://localhost:8880
 
 /*
+    Please do not assign any https protocols to this project, or at least dont commit anything of the sort.
 
-    Only use this https configuration for dev environments, fallback to cdn default on production version
-    (the stuff that is on the webserver)
-
-    Hosting this express app on a webserver, without this express https protocol middleware
-    should be sufficient and should work just like a normal website, where the cdn would
-    issue a cert instead of doing it programmatically.
+    Plesk automatically uses cloudflare to issue a domain certificate which makes the origin
+    site (https://store.brendanprice.xyz) use the https protocol. 
+    
+    Pushing a change to the repository will automatically trigger a websocket on plesk to pull the 
+    latest repository version and update the website files accordingly.
 */
