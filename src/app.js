@@ -28,7 +28,7 @@ app.get('*', (req, res) => {
 
 // listen on port 4300
 app.listen(4300);
-console.log('Fubar');
+console.log('Running...');
 // origin is http://localhost:4300
 
 /*
