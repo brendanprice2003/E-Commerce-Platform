@@ -1,14 +1,17 @@
 
 // npm
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import express from 'express';
-import sqlite3 from 'sqlite3';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
+// import express from 'express';
+// import sqlite3 from 'sqlite3';
+const path = require('path');
+const express = require('express');
+// const sqlite3 = require('sqlite3');
 
 // config
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
 const app = express();
 
 // configure middleware
@@ -23,7 +26,7 @@ app.get('/', (req, res) => {
 
 // * wildcard
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, './public/pages/home.html'));
+    res.sendFile(path.resolve(__dirname, './pages/home.html'));
 });
 
 // listen on port 4300
