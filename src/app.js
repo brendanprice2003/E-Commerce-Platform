@@ -9,8 +9,9 @@ const log = console.log.bind(console); // shorthand function for `console.log();
 const app = express();
 
 // configure middleware
-app.use('/public', express.static(__dirname + '/public'));
-
+// app.use('/public', express.static(__dirname + '/public'));
+// app.use('/pages', express.static(__dirname + '/pages'));
+app.use(express.static(__dirname));
 
 // paths
 app.get('/home', (req, res) => {

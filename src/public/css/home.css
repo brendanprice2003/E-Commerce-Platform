@@ -2,6 +2,57 @@ body {
     padding: 0;
     margin: 0;
     background-color: rgb(50,50,50);
+
     color: white;
     font-family: 'SF Pro Display', sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+.Main{
+    background-color: black;
+    height: auto;
+    width: 100%;
+}
+
+.Intro > div{
+    padding-left: 15%;
+    padding-right: 15%;
+
+    height: 35vh;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(121,9,38,1) 35%, rgba(0,212,255,1) 100%);
+}
+.Intro h2{
+    margin-top: 0;
+}
+
+.Intro button{
+    background-color: gray;
+    color: white;
+    text-transform: uppercase;
+    border: 0;
+    padding: 10px;
+    font-size: large;
+}
+.Intro button:hover{
+    background-color: rgb(95, 95, 95);
+}
+
+.Intro li{
+    margin: 10px 0;
+}
+
+
+.slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+.slide.active {
+    opacity: 1;
+    display: flex;
 }
