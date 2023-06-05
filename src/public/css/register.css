@@ -1,0 +1,81 @@
+#Main{
+    width: 100%;
+    font-family: Roboto Slab;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Main h1{
+    text-align: center;
+}
+
+#registrationForm {
+    padding: 2%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+    background-color: #41b6a6;
+}
+
+#registrationForm label {
+    font-size: larger;
+    margin: 0;
+}
+
+#registrationForm input {
+    font-family: Roboto Slab;
+    font-size: x-large;
+}
+/* 
+#registrationForm button {
+    font-family: Roboto Slab;
+    font-size: x-large;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 0;
+    
+} */
+
+/* #registrationForm button:hover {
+
+} */
+
+
+
+#registrationForm button{
+    position: relative;
+    height: 50px;
+    border: 1px solid #060808;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-weight: 600;
+    background-color: #7acec3;
+
+    font-family: Roboto Slab;
+    font-size: x-large;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#registrationForm button:hover{
+    background-color: #2a7067;
+    transition: 0.5s;
+
+}
+#registrationForm button > img{
+    position: absolute;
+    left:25%;
+    object-fit: fit;
+    width: auto;
+
+    height: 100%;
+}
+
+#registrationForm button > span{
+    width: 80%;
+}

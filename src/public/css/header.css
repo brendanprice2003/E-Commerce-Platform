@@ -1,13 +1,32 @@
 
+@font-face {
+    font-family: "Roboto Slab";
+    src: url("../media/home/RobotoSlab-VariableFont_wght.ttf");
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(50,50,50);
+
+    color: white;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+button{
+    cursor: pointer;
+}
+
 header{
     background: linear-gradient(90deg, rgba(50,50,50,1) 0%, rgba(50,50,50,1) 27%, rgba(39,116,73,1) 100%);
     width: 100%;
-    height: 10vh;
+    height: auto;
 }
 
 header > div:first-of-type{
     width: 98%;
-    height: 70%;
+    height: 7vh;
     padding-left: 1%;
     padding-right: 1%;
     padding-top: 5px;
@@ -19,6 +38,10 @@ header > div:first-of-type{
 header img{
     height: 100%;
 }
+header > div:first-of-type > img{
+    cursor: pointer;
+}
+
 header > div:first-of-type > div:first-of-type{
     width: 30%;
     display: flex;
@@ -34,7 +57,7 @@ header input{
 }
 
 
-header button,input{
+header button,header input{
     -moz-box-sizing: content-box; /* or `border-box` */
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
@@ -51,7 +74,10 @@ header button{
     font-weight: 1000;
 }
 
-
+header button:hover{
+    transition: 0.2s;
+    background-color: #37998c;
+}
 
 /* MY ACCOUNT THINGY ON THE PAGE */
 
@@ -82,7 +108,9 @@ header button{
 
 .user_basket p{
     font-weight: 1000;
+    margin: 0;
     margin-right: 5px;
+    color: white;
 }
 .user_basket img{
     height: 60%;
@@ -94,3 +122,28 @@ header button{
     display: flex;
     align-items: center;
 }
+
+
+
+/* SEARCH OPTION MENU */
+
+.Search_Options{
+    background-color: black;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.Search_Options button{
+    width: 100%;
+    padding: 0;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    background-color: #41b6a6;
+    border: 0;
+    border-top: 5px solid #37998c;
+
+}
+

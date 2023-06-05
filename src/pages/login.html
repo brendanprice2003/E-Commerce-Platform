@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/header.css">
+
+    <link rel="shortcut icon" href="/public/media/icon.png">
+    <title>Scam - PC|Laptops|Tech|Offers</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="../public/media/icon.png" alt="Home Page" onclick="window.location.href='../pages/home.html'">
+            <div>
+                <input id="searchbox" name="searchbox"type="text" placeholder="Search keyword, LN or model number">
+                <button onclick="searchItem()">SEARCH</button>
+            </div>
+
+            <div class="user_control">
+                <img src="../public/media/user.png" alt="">
+                <div>
+
+                    <span>MY ACCOUNT</span>
+                    <div>
+                        <span onclick="window.location.href='../pages/login.html'">Login</span> |
+                        <span onclick="window.location.href='../pages/register.html'">Register</span>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="user_basket">
+                <p>0</p>
+                <img src="../public/media/basket.png" alt="">
+            </div>
+        </div>
+
+        <div class="Search_Options">
+            <button onclick="searchItemParameter('Desktop')">PC</button>
+            <button onclick="searchItemParameter('Laptop')">Laptop</button>
+            <button onclick="searchItemParameter('SSD HDD')">Storage</button>
+            <button onclick="searchItemParameter('CPU processor')">CPU</button>
+            <button onclick="searchItemParameter('NVIDIA Radeon Graphics')">GPU</button>
+            <button onclick="searchItemParameter('Motherboard')">Motherboards</button>
+        </div>
+    </header>
+    
+
+
+    
+    <div>
+
+    </div>
+
+
+
+
+    <footer>
+
+    </footer>
+    <script src="/public/js/header.js"></script>
+
+</body>
+</html>

@@ -28,3 +28,7 @@ function nextSlide() {
 }
 
 setInterval(nextSlide, 5000); // Change slide every 3 seconds
+
+
+
+// THIS IS FOR THE SEARCH

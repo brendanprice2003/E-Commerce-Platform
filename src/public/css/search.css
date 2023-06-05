@@ -1,0 +1,45 @@
+#resultsContainer{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.product{
+    min-width: 300px;
+    width: 20%;
+    border: 5px solid white;
+    border-radius: 15px;
+    margin-top: 1%;
+
+    padding: 0.5%;
+
+    font-family: "Roboto Slab";
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.product p{
+    margin: 0;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+
+}
+
+.product button{
+    margin-top: 15px;
+    padding: 10px;
+    font-family: "Roboto Slab";
+    font-weight: 500;
+    color: white;
+    background-color: rgba(39,116,73,1);
+    border: 0;
+    justify-self: center;
+}
+
+.product button:hover{
+    background-color: rgb(27, 71, 46);
+    transition: 0.5s;
+}
