@@ -109,13 +109,10 @@ app.post('/register', (req, res) => {
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './pages/home.html'));
 });
-// app.get('/', (req, res) => {
-//     res.redirect('/home');
-// });
 
 // listen on port 8880
 app.listen(8880);
-console.log('Running...');
+console.log('Running on http://localhost:8880');
 // origin is http://localhost:8880
 
 /*

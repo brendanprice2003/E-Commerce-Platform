@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/header.css">
+    <link rel="stylesheet" href="/public/css/login.css">
 
     <link rel="shortcut icon" href="/public/media/icon.png">
     <title>Scam - PC|Laptops|Tech|Offers</title>
@@ -32,7 +33,6 @@
             </div>
 
             <div class="user_basket">
-                <p>0</p>
                 <img src="../public/media/basket.png" alt="">
             </div>
         </div>
@@ -50,9 +50,19 @@
 
 
     
-    <div>
-
+    <div id="Main">
+        <h1>Log in</h1>
+        <form id="registrationForm">
+          <label for="username">Username or Email:</label>
+          <input type="text" id="username" name="username" required><br>
+      
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required><br>
+      
+          <button type="submit"><img src="../public/media/arrow.png"><span>Login</span></button>
+        </form>
     </div>
+    <div id="doesnotexist">Account does not exist, Please <a href="./register.html">Register</a> or try again.</div>
 
 
 
@@ -61,6 +71,7 @@
 
     </footer>
     <script src="/public/js/header.js"></script>
+    <script src="/public/js/login.js"></script>
 
 </body>
 </html>

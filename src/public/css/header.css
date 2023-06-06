@@ -19,7 +19,8 @@ button{
 }
 
 header{
-    background: linear-gradient(90deg, rgba(50,50,50,1) 0%, rgba(50,50,50,1) 27%, rgba(39,116,73,1) 100%);
+    /* background: linear-gradient(90deg, rgba(50,50,50,1) 0%, rgba(50,50,50,1) 27%, rgba(39,116,73,1) 100%); */
+    background: linear-gradient(#277449 0%, #324038 25%, #323232 100%);
     width: 100%;
     height: auto;
 }
@@ -145,5 +146,19 @@ header button:hover{
     border: 0;
     border-top: 5px solid #37998c;
 
+}
+
+.discovercon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discoverbtn {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #37998c;
+    cursor: pointer;
 }
 

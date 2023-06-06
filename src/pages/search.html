@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/home.css">
     <link rel="stylesheet" href="/public/css/header.css">
     <link rel="stylesheet" href="/public/css/search.css">
 
@@ -13,7 +14,7 @@
 <body>
     <header>
         <div>
-            <img src="../public/media/icon.png" alt="Home Page" onclick="window.location.href='../pages/home.html'">
+            <img class="navicon" src="../public/media/icon.png" alt="Home Page" onclick="window.location.href='../pages/home.html'">
             <div>
                 <input id="searchbox" name="searchbox"type="text" placeholder="Search keyword, LN or model number">
                 <button onclick="searchItem()">SEARCH</button>
@@ -24,17 +25,16 @@
                 <div>
 
                     <span>MY ACCOUNT</span>
-                    <div>
+                    <div id="nouser">
                         <span onclick="window.location.href='../pages/login.html'">Login</span> |
                         <span onclick="window.location.href='../pages/register.html'">Register</span>
-
                     </div>
+                    <div id="user"></div>
                 </div>
             </div>
 
             <div class="user_basket">
-                <p>0</p>
-                <img src="../public/media/basket.png" alt="">
+                <img src="../public/media/basket.png" alt="" onclick="window.location.href='../pages/basket.html'">
             </div>
         </div>
 

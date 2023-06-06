@@ -13,10 +13,14 @@
 <body>
     <header>
         <div>
-            <img src="../public/media/icon.png" alt="Home Page" onclick="window.location.href='../pages/home.html'">
+            <img class="navicon" src="../public/media/icon.png" alt="Home Page" onclick="window.location.href='../pages/home.html'">
             <div>
                 <input id="searchbox" name="searchbox"type="text" placeholder="Search keyword, LN or model number">
                 <button onclick="searchItem()">SEARCH</button>
+            </div>
+
+            <div class="discovercon">
+                <div class="discoverbtn" onclick="window.location.href='/pages/search.html?query='">Discover</div>
             </div>
 
             <div class="user_control">
@@ -24,17 +28,16 @@
                 <div>
 
                     <span>MY ACCOUNT</span>
-                    <div>
+                    <div id="nouser">
                         <span onclick="window.location.href='../pages/login.html'">Login</span> |
                         <span onclick="window.location.href='../pages/register.html'">Register</span>
-
                     </div>
+                    <div id="user"></div>
                 </div>
             </div>
 
             <div class="user_basket">
-                <p>0</p>
-                <img src="../public/media/basket.png" alt="">
+                <img src="../public/media/basket.png" alt="" onclick="window.location.href='../pages/basket.html'">
             </div>
         </div>
 
@@ -73,19 +76,18 @@
 
             <div class="slide">
                 <div>
-                    <h2>PENIS</h2>
-                    <p>MOLEST YOUR BALLS LIKE A PRO</p>
-                    <button>View BITCHES</button>
+                    <h2>Warranty Guarantee</h2>
+                    <p>Backed by our industry-standard warranties</p>
+                    <button>Learn More</button>
                 </div>
-                <img src="data:image/jpeg;base64,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" height="100%">
+                <img src="../public/media/home/gaming_laptop.png" height="80%">
                 <div>
                     <ul>
-                        <li>Premium sex offenders</li>
-                        <li>Extensively tested including 24hr sex session</li>
-                        <li>7 day evening and weekend support underneath your gamer chair</li>
-                        <li>Premium 3 year warranty for your slut</li>
-                        <li>Best in-class assssets ;3</li>
-                        <li>Award-winning ejaculations</li>
+                        <li>24 Months of Free warranty</li>
+                        <li>Includes breakdown coverage and accidental damage</li>
+                        <li>24/7 Customer support and free returns</li>
+                        <li>2 Months money back guarantee!</li>
+                        <li>Award-winning service</li>
                       </ul>
                 </div>
             </div>
@@ -97,19 +99,25 @@
                 <div>
                     <h2>PRO GRAPHICS</h2>
                     <p>Enjoy the graphics with new advanced GPUs from both team GREEN and team RED</p>
-                    <button onclick="searchItemParameter('NVIDIA Radeon Graphics')" ><img src="../public/media/arrow.png"><span>Search for Graphics Cards</span></button>
+                    <button onclick="searchItemParameter('NVIDIA Radeon Graphics')">
+                        <span>Discover GPUs</span>
+                        <img src="../public/media/arrow_right.svg">
+                    </button>
                 </div>
 
-                <img src="../public/media/home/Graphics-Card-PNG-Transparent-HD-Photo.png" alt="">
+                <img src="../public/media/home/Graphics-Card-PNG-Transparent-HD-Photo.png">
             </div>
             <div>
                 <div>
                     <h2>PRO PROCESSING</h2>
-                    <p>Enjoy processing power with new advanced Ryzen 7000 or Intel Core i9 processors both leading in gaming and consumer workloads</p>
-                    <button onclick="searchItemParameter('CPU processor')"><img src="../public/media/arrow.png"><span>Search for CPUs</span></button>
+                    <p>Enjoy our high-end processing power with new Ryzen 7000 series or Intel Core i9 processors; both leading in gaming and consumer rated workloads.</p>
+                    <button onclick="searchItemParameter('CPU processor')">
+                        <span>Discover Processors</span>
+                        <img src="../public/media/arrow_right.svg">
+                    </button>
                 </div>
 
-                <img src="../public/media/home/Processor-PNG-Photo-Image.png" alt="">
+                <img src="../public/media/home/Processor-PNG-Photo-Image.png">
             </div>
 
 
@@ -117,10 +125,13 @@
                 <div>
                     <h2>PRO GAMING DESKTOPS</h2>
                     <p>The fastest gaming PCs - plus a huge range of peripherals for the ultimate gaming experience.</p>
-                    <button onclick="searchItemParameter('Desktop')"><img src="../public/media/arrow.png"><span>Search for Gaming Desktops</span></button>
+                    <button onclick="searchItemParameter('Desktop')">
+                        <span>Discover Gaming Desktops</span>
+                        <img src="../public/media/arrow_right.svg">
+                    </button>
                 </div>
 
-                <img src="../public/media/home/159593-middle.png" alt="">
+                <img src="../public/media/home/159593-middle.png">
             </div>
 
 
@@ -128,10 +139,13 @@
                 <div>
                     <h2>PRO GAMING LAPTOPS</h2>
                     <p>Unleash gaming excellence on-the-go with our swift gaming laptops and a wide range of peripherals for the ultimate gaming experience.</p>
-                    <button onclick="searchItemParameter('Laptop')"><img src="../public/media/arrow.png"><span>Search for Gaming Laptops</span></button>
+                    <button onclick="searchItemParameter('Laptop')">
+                        <span>Discover Gaming Laptops</span>
+                        <img src="../public/media/arrow_right.svg">
+                    </button>
                 </div>
 
-                <img src="../public/media/home/gaming_laptop.png" alt="">
+                <img src="../public/media/home/gaming_laptop.png">
             </div>
         </div>
 
@@ -140,7 +154,8 @@
     <footer>
 
     </footer>
-    <script src="/public/js/home.js"></script>
+    
+    <script defer src="/public/js/home.js"></script>
     <script src="/public/js/header.js"></script>
 
 </body>

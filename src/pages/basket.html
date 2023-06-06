@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/home.css">
+    <link rel="stylesheet" href="/public/css/basket.css">
+    <link rel="stylesheet" href="/public/css/header.css">
+
+    <link rel="shortcut icon" href="/public/media/icon.png">
+    <title>Scam - PC|Laptops|Tech|Offers</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img class="navicon" src="../public/media/icon.png" alt="Home Page" onclick="window.location.href='../pages/home.html'">
+            <div>
+                <input id="searchbox" name="searchbox"type="text" placeholder="Search keyword, LN or model number">
+                <button onclick="searchItem()">SEARCH</button>
+            </div>
+
+            <div class="user_control">
+                <img src="../public/media/user.png" alt="">
+                <div>
+
+                    <span>MY ACCOUNT</span>
+                    <div id="nouser">
+                        <span onclick="window.location.href='../pages/login.html'">Login</span>
+                        <span onclick="window.location.href='../pages/register.html'">Register</span>
+                    </div>
+                    <div id="user"></div>
+                </div>
+            </div>
+
+            <div class="user_basket">
+                <img src="../public/media/basket.png" alt="" onclick="window.location.href='../pages/basket.html'">
+            </div>
+        </div>
+
+        <div class="Search_Options">
+            <button onclick="searchItemParameter('Desktop')">PC</button>
+            <button onclick="searchItemParameter('Laptop')">Laptop</button>
+            <button onclick="searchItemParameter('SSD HDD')">Storage</button>
+            <button onclick="searchItemParameter('CPU processor')">CPU</button>
+            <button onclick="searchItemParameter('NVIDIA Radeon Graphics')">GPU</button>
+            <button onclick="searchItemParameter('Motherboard')">Motherboards</button>
+        </div>
+    </header>
+
+    <div class="Main">
+        <h1>Basket</h1>
+        <div id="noitems">There are no items in your basket <a href="/pages/search.html?query=">try adding some items</a></div>
+        <div id="basketItems"></div>
+        <div class="checkoutcon">
+            <div id="attrSubtotal">--</div>
+            <div id="attrShipping">--</div>
+            <div id="attrVat">--</div>
+            <hr class="checkoutline">
+            <div id="attrTotal">--</div>
+            <div id="checkout">Checkout</div>
+        </div>
+    </div>
+
+    <div id="checkoutwindowBg">
+        <div id="checkoutwindow">
+            <h2>Checkout</h2>
+            <div>
+                <div style="display: flex;justify-content: space-between;">
+                    <div class="subcheckouthead">Item</div>
+                    <div class="subcheckouthead">Price</div>
+                </div>
+                <hr class="checkoutline">
+                <div id="checkoutitems"></div>
+                <div id="checkouttotal"></div>
+            </div>
+            <div class="paymentcon">
+                <h3>Payment Details</h3>
+                <div class="payicons">
+                    <img src="../public/media/mastercard.svg" class="payicon">
+                    <img src="../public/media/visa.svg" class="payicon">
+                    <img src="../public/media/googlepay.svg" class="payicon">
+                    <img src="../public/media/paypal.svg" class="payicon">
+                </div>
+                <form class="paymentfields">
+                    <input type="text" id="fname" name="cardNumber" placeholder="Card Number">
+                    <input type="text" id="lname" name="cardExpire" placeholder="Expires MM/YY">
+                    <input type="text" id="lname" name="cardSecret" placeholder="CVC X.X.X">
+                  
+                    <input type="submit" value="Purchase">
+                </form>
+                <div style="font-style: italic;font-size: 12px;color: gray;">All purchases are backed by our 2-month money back gaurantee</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+    <script src="/public/js/basket.js"></script>
+    <script src="/public/js/header.js"></script>
+
+</body>
+</html>

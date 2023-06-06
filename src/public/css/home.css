@@ -11,11 +11,17 @@ body {
 
     color: white;
     font-family: 'SF Pro Display', sans-serif;
+    user-select: none;
+}
+
+a {
+    color: inherit;
 }
 
 button{
     cursor: pointer;
 }
+
 .Main{
     background-color: black;
     height: auto;
@@ -32,8 +38,9 @@ button{
     height: 35vh;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgba(121,9,38,1) 35%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, #8e5757 0%, #790926 35%, #00d4ff 100%);
 }
+
 .Intro h2{
     margin-top: 0;
 }
@@ -46,8 +53,9 @@ button{
     padding: 10px;
     font-size: large;
 }
+
 .Intro button:hover{
-    background-color: rgb(95, 95, 95);
+    background-color: #5f5f5f;
 }
 
 .Intro li{
@@ -69,25 +77,27 @@ button{
 
 .View_Box{
     padding-top: 1%;
-    background: linear-gradient(90deg, rgba(50,50,50,1) 0%, rgba(50,50,50,1) 27%, rgba(39,116,73,1) 100%);
+    padding-bottom: 100px;
+    /* background: linear-gradient(90deg, #323232 0%, #323232 27%, #277449 100%); */
+    background-color: #222222;
     display: flex;
     width: 100%;
     height: auto;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    gap: 10px;
 }
 
 .View_Box > div{
-    margin-bottom: 1%;
-    background-color: rgb(247, 247, 247);
-    width: 48%;
-    height: 30vh;
-
     display: flex;
+    width: 45%;
+    height: 30vh;
+    border-radius: 10px;
+    border: 1px solid #3c3b3d;
     align-items: center;
     justify-content: space-around;
-    border-radius: 10px;
+    background-color: #1d1c1e;
 }
 
 .View_Box > div img{
@@ -97,14 +107,17 @@ button{
 }
 
 .View_Box > div h2{
-    font-weight: 1000;
+    font-weight: 600;
 }
+
 .View_Box > div h2,.View_Box > div p,.View_Box > div button{
     margin-top: 0;
     color: black;
     max-width: 250px;
-    font-family: Roboto Slab;
+    font-family: unset;
+    color: white;
 }
+
 .View_Box > div > div{
     height: 90%;
     display: flex;
@@ -113,29 +126,31 @@ button{
 }
 
 .View_Box > div button{
-    height: 50px;
-    border: 1px solid #4ec8b8;
-    border-radius: 15px;
     display: flex;
+    padding: 10px;
+    border: unset;
+    border-radius: 5px;
     align-items: center;
     justify-content: space-between;
+    background-color: #107E5D;
     font-weight: 600;
-    background-color: #4ec8b8;
-
 }
 
 .View_Box > div button:hover{
-    background-color: #2a7067;
-    transition: 0.5s;
-
+    background-color: #3f958a;
+    transition: 0.1s;
 }
+
 .View_Box > div button > img{
-    object-fit: fit;
-    width: auto;
-
-    height: 100%;
+    width: 26px;
 }
 
-.View_Box > div button > span{
-    width: 80%;
+/* .View_Box > div button > span {
+
+} */
+
+.navicon {
+    margin-top: 10px;
+    width: 48px;
+    height: 48px;
 }

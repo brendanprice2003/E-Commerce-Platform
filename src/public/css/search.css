@@ -1,31 +1,77 @@
 #resultsContainer{
     display: flex;
-    width: 100%;
+    margin-top: 50px;
+    gap: 10px;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
-.product{
+.con {
+    position: relative;
+    padding: 10px;
+    padding-top: 10px;
+    width: 20%;
+    max-height: 170px;
+    height: 170px;
+    border: 1px solid #484848;
+    border-radius: 8px;
+    background-color: #232323;
+}
+
+.productname {
+    font-weight: 600;
+}
+
+.productdesc {
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.subjectCon {
+    display: flex;
+    position: absolute;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-direction: column;
+    gap: 5px;
+    bottom: 0;
+}
+
+.addtobasketBtn {
+    position: absolute;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    bottom: 0;
+    right: 0;
+    background-color: #107E5D;
+    cursor: pointer;
+}
+
+.addtobasketBtn:hover {
+    background-color: #366a5c;
+}
+
+
+/* .product{
+    display: flex;
+    margin-top: 1%;
+    padding: 0.5%;
+    flex-direction: column;
     min-width: 300px;
     width: 20%;
-    border: 5px solid white;
-    border-radius: 15px;
-    margin-top: 1%;
-
-    padding: 0.5%;
-
-    font-family: "Roboto Slab";
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
+    border: 1px solid #696969;
+    background-color: #212121;
+    border-radius: 8px;
 }
 
 .product p{
     margin: 0;
     margin-top: 2.5px;
     margin-bottom: 2.5px;
-
 }
 
 .product button{
@@ -42,4 +88,4 @@
 .product button:hover{
     background-color: rgb(27, 71, 46);
     transition: 0.5s;
-}
+} */
