@@ -118,14 +118,44 @@ hr.checkoutline {
 }
 
 #checkoutwindow {
+    display: block;
     padding: 25px;
     margin: 0 auto;
     margin-top: 200px;
     width: 30%;
     height: fit-content;
     border: 1px solid #545454;
-    border-radius: 8px;
+    border-radius: 5px;
     background-color: #252525;
+}
+
+#checkoutcomplete {
+    display: none;
+    padding: 25px;
+    margin: 0 auto;
+    margin-top: 200px;
+    justify-content: center;
+    text-align: center;
+    width: 30%;
+    height: fit-content;
+    border-radius: 5px;
+    background-color: #398D73;
+}
+
+.checkmark {
+    margin: 0 auto;
+    justify-content: center;
+    width: 64px;
+}
+
+.completeHead {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.completeMed {
+    font-size: 16px;
 }
 
 .subcheckouthead {

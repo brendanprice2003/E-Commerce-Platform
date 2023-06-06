@@ -185,8 +185,11 @@ function checkout() {
 
     // make url params and redirect user
     params = new URLSearchParams(params);
-    localStorage.setItem('basket', JSON.stringify({})) // clear basket
-    window.location.href = `/purchase?${params}`;
+    localStorage.setItem('basket', JSON.stringify({})); // clear basket
+    
+    // show complete window
+    document.getElementById('checkoutwindow').style.display = 'none';
+    document.getElementById('checkoutcomplete').style.display = 'block';
 
 };
 
