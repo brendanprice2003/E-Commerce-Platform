@@ -18,6 +18,17 @@ const db = mysql.createConnection({
     database: 'brendanp_ecom'
 });
 
+// Generate a random string with defined length
+// @int {len}
+function GenerateRandomString(len) {
+  let result = '';
+  let characters = '0123456789';
+  for (let i = 0; i < len; i++) {
+      result += characters.charAt(Math.floor(Math.random() * characters.length));
+  };
+  return result;
+};
+
 // Connect to the database
 db.connect(err => {
     if (err) {
@@ -99,6 +110,41 @@ app.post('/register', (req, res) => {
       res.status(200).json({ message: 'User registered successfully' });
     });
   });
+});
+
+
+
+// Purchase endpoint
+app.get('/purchase', (req, res) => {
+
+  let order = req.query;
+  let data = new Array(8);
+  const query = `INSERT INTO purchases (purchase_id, user_id, product_id, purchase_date, quantity, delivery_date, delivery_status, address) 
+  VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+
+  // insert purchases via "product_x" iterator
+  Object.keys(order).forEach((key, index) => {
+
+    // check if product with id exists - send post request to purchases table
+    if (key.includes('product_')) {
+      
+      // post products separately
+      let productId = key.split('_')[1];
+      data = [parseInt(GenerateRandomString(8)), 1, parseInt(productId), new Date(order.purchase_date), parseInt(order.quantity), new Date(), 0, 0];
+
+      db.query(query, data, (err, result) => {
+        if (err) {
+          console.error('Error adding purchase:', err);
+          return;
+        };
+      });
+
+    };
+
+  });
+
+  // redirect to home
+  res.redirect('/home');
 });
   
   

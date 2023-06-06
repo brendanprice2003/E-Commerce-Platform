@@ -157,11 +157,43 @@ function doCheckoutProcess() {
 
     // add total in checkout window
     document.getElementById('checkouttotal').innerHTML = `Total: $${checkoutDat.cheque.total} <span style="font-size: 12px;">VAT incl.</span>`;
+};
 
-    // add purchase to database
-    // clear basket and redirect back to homepage
+
+// add order to purchases
+function checkout() {
+
+    /*
+        - add purchase to database
+        - clear basket and redirect back to homepage
+    */
+
+    // build querystring
+    let params = {};
+    params = {
+        ['user_id']: checkoutDat.user.username,
+        ['purchase_date']: new Date(),
+        ['quantity']: 1
+    };
+
+    // add item to query param
+    for (let index in checkoutDat.items) {
+
+        let item = checkoutDat.items[index];
+        params[`product_${item.product_id}`] = item.name;
+    };
+
+    // make url params and redirect user
+    params = new URLSearchParams(params);
+    localStorage.setItem('basket', JSON.stringify({})) // clear basket
+    window.location.href = `/purchase?${params}`;
+
 };
 
 document.getElementById('checkout').addEventListener('click', () => {
     doCheckoutProcess();
+});
+document.querySelector('.paymentfields').addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkout();
 });

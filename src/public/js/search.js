@@ -25,7 +25,7 @@ function search() {
     .catch(error => {
       console.error(error);
     });
-}
+};
 
 function displayResults(data) {
   const resultsContainer = document.getElementById('resultsContainer');
@@ -39,7 +39,7 @@ function displayResults(data) {
     noResultsMessage.textContent = 'No results found.';
     resultsContainer.appendChild(noResultsMessage);
     return;
-  }
+  };
 
   // Loop through the results and create HTML elements to display them
   data.forEach(product => {
@@ -77,48 +77,15 @@ function displayResults(data) {
     subjectCon.append(attrPrice, attrQuant);
     con.append(attrName, attrDesc, subjectCon, addBtn);
     resultsContainer.appendChild(con);
-
-    // const productContainer = document.createElement('div');
-    // productContainer.classList.add('product');
-
-    // const productId = document.createElement('p');
-    // productId.textContent = `ID: ${product.product_id}`;
-
-    // const productName = document.createElement('h3');
-    // productName.textContent = product.name;
-
-    // const productDescription = document.createElement('p');
-    // productDescription.textContent = product.description;
-
-    // const productPrice = document.createElement('p');
-    // productPrice.textContent = `Price: $${product.price}`;
-
-    // const productQuantity = document.createElement('p');
-    // productQuantity.textContent = `Quantity: ${product.quantity}`;
-
-    // const addButton = document.createElement('button');
-    // addButton.textContent = `Add to Basket`;
-    // addButton.onclick=`AddBasket(${product})`;
-    // addButton.onclick = () => AddBasket(product);
-
-    // productContainer.appendChild(productName);
-    // productContainer.appendChild(productDescription);
-    // productContainer.appendChild(productPrice);
-    // productContainer.appendChild(productQuantity);
-    // // productContainer.appendChild(productId);
-    // productContainer.appendChild(addButton);
-
-    // resultsContainer.appendChild(productContainer);
   });
 
   window.addEventListener("resize", matchHeightsDelay);
-
 
   window.addEventListener('load', (event) => {
     matchHeightsDelay();
   });
   matchHeightsDelay();
-}
+};
 
 // add item to basket
 function AddBasket(product) {
@@ -138,7 +105,7 @@ function AddBasket(product) {
   // add item
   basket[product.product_id] = product;
   localStorage.setItem('basket', JSON.stringify(basket));
-}
+};
 
 // Call the search function on page load
 search();
@@ -147,12 +114,13 @@ search();
 
 function matchHeightsDelay() {
   setTimeout(matchHeights("resultsContainer"), 10);
-}
+};
 
 
 function matchHeights(Parent) {
-  let TallestDivHeight = 0,
-    children = Array.prototype.slice.call(document.getElementById(Parent).children);
+
+  let TallestDivHeight = 0;
+  let children = Array.prototype.slice.call(document.getElementById(Parent).children);
 
   children.forEach((element) => {
     element.style.height = "auto";
@@ -161,10 +129,10 @@ function matchHeights(Parent) {
   children.forEach((element) => {
     if (element.offsetHeight > TallestDivHeight) {
       TallestDivHeight = element.offsetHeight;
-    }
+    };
   });
 
   children.forEach((element) => {
     element.style.height = TallestDivHeight + "px";
   });
-}
+};
