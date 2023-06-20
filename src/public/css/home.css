@@ -154,3 +154,39 @@ button{
     width: 48px;
     height: 48px;
 }
+
+/* .Promotion{
+    padding: 10px;
+    background: linear-gradient(90deg, rgba(255, 204, 204, 1) 0%, rgba(255, 230, 204, 1) 10%, rgba(240, 245, 204, 1) 20%, rgba(214, 245, 204, 1) 30%, rgba(212, 245, 241, 1) 40%, rgba(203, 233, 241, 1) 50%, rgba(191, 217, 245, 1) 60%, rgba(203, 193, 245, 1) 70%, rgba(229, 186, 245, 1) 80%, rgba(255, 174, 229, 1) 90%, rgba(255, 204, 204, 1) 100%);
+
+}
+.Promotion p{
+    color: black;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+} */
+
+.Promotion {
+    padding: 10px;
+    background: linear-gradient(90deg, rgba(255, 204, 204, 1) 0%, rgba(255, 230, 204, 1) 10%, rgba(240, 245, 204, 1) 20%, rgba(214, 245, 204, 1) 30%, rgba(212, 245, 241, 1) 40%, rgba(203, 233, 241, 1) 50%, rgba(191, 217, 245, 1) 60%, rgba(203, 193, 245, 1) 70%, rgba(229, 186, 245, 1) 80%, rgba(255, 174, 229, 1) 90%, rgba(255, 204, 204, 1) 100%);
+    overflow: hidden;
+  }
+  
+.Promotion p {
+    color: black;
+    font-style: italic;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
